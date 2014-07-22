@@ -74,6 +74,11 @@ on spaces"
                   nxml-child-indent)
                  ((eq major-mode 'coffee-mode)
                   coffee-tab-width)
+		 ((eq (derived-mode-class major-mode) 'sws-mode)
+		  sws-tab-width)
+                 ((eq major-mode 'web-mode) ; multiple lang mode
+		  ; other similar vars: web-mode-{css-indent,scripts}-offset
+		  web-mode-html-offset) 
                  ((local-variable-p 'c-basic-offset)
                   c-basic-offset)
                  (t
